@@ -247,6 +247,11 @@
 
   };
 
+  simpleJsonSource.closeGraph = function () {
+    simpleJsonSource.socket.close();
+    console.log('call close');
+  }
+
 
   global.scPlugin.datasource["websocket-simple-json-datasource"] = simpleJsonSource;
 })(this);
