@@ -248,7 +248,9 @@
   };
 
   simpleJsonSource.closeGraph = function () {
-    simpleJsonSource.socket.close();
+    if (simpleJsonSource.socket && typeof simpleJsonSource.socket.close === 'function') {
+      simpleJsonSource.socket.close();
+    }
     console.log('call close');
   }
 
